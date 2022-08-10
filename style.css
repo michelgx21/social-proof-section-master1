@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+*{
+    font-family: 'League Spartan', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding: 65px auto 65px;
+}
+:root{
+    --VeryDarkMagenta: hsl(300, 43%, 22%);
+    --SoftPink: hsl(333, 80%, 67%);
+    --DarkGrayishMagenta: hsl(303, 10%, 53%);
+    --LightGrayishMagenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+body{
+    min-width:100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    padding: 65px auto 65px;
+    height: 800px;
+    background: url(images/bg-pattern-top-desktop.svg) ,url(images/bg-pattern-bottom-desktop.svg);
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+}
+p {
+    line-height: 20px;
+}
+main{
+    min-width: 375px;
+    max-width: 1440px;
+    width: 90%;
+    display: grid;
+    grid-template-areas: "l r" "b b";
+    gap: 50px;
+}
+/*---left---*/
+.left{
+    grid-area: l;
+    font-weight: 400;
+}
+.left p{
+    font-size: 17px;
+    color: var(--DarkGrayishMagenta);
+    
+}
+h1{
+    font-weight: 700;
+    color: var(--VeryDarkMagenta);
+    font-size: 50px;
+    margin-bottom: 45px;
+}
+/*---right---*/
+.right{
+    grid-area: r;
+    display: grid;
+    grid-template-areas: "s" "s2" "s3";
+    grid-template-columns: 50px 50px 350px 50px 50px;
+    gap: 16px;
+    align-items: right;
+    justify-content: right;   
+}
+.star{
+    grid-column: 1/4;
+}
+.star2{
+    grid-column: 2/5;
+}
+.star3{
+    grid-column: 3/6;
+}
+#star{
+    display:flex;
+    background-color: var(--LightGrayishMagenta);
+    border-radius: 5px;
+    line-height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+#star h3{
+    color:  var(--DarkGrayishMagenta);
+    font-weight: 700;
+    margin-left: 15px;
+      
+}
+.img-star{
+    margin-top: 10px;
+}
+#star img{
+    margin: 9px;
+    margin-top: 12px;
+}
+
+/*---bottom---*/
+.bottom{
+    grid-area: b;
+    display: grid;
+    grid-template-areas: "e e2 e3" ;
+    grid-template-rows: 15px 15px 165px  15px 15px ;
+    gap: 28px;
+    color: var(--White);
+}
+.bottom p{
+    line-height: 25px;
+}
+#errand{
+    background-color: var(--VeryDarkMagenta);
+    border-radius: 5px;
+    text-align: start;
+    padding: 25px 0px 25px 0px ;
+}
+.errand{ 
+ grid-area: e;
+ grid-row: 1/4;
+}
+#errand p, .images{
+padding: 0px 26px 0px 26px;
+font-size: 20px;
+}
+#errand p{
+    font-weight: 400;
+}
+.errand2{
+    grid-area: e2;
+    grid-row: 2/5;
+}
+.errand3{
+    grid-area: e3;
+    grid-row: 3/6;
+}
+.images{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.images img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.images span{
+    font-weight: 500;
+    color: var(--SoftPink);
+}
+.images h3{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin-left: 20px;
+}
+@media only screen and (max-width:1024px) {
+    body{
+        width: 100vw;
+        height: 1530px;
+        text-align: center;
+    }
+    main{
+        grid-template-areas: "l" "r" "b";
+    }
+     /*--left--*/
+     .left{
+        width: 92vw;
+     }
+     /*----right---*/
+     .right{
+        grid-template-columns: auto 0 0 0 0;
+     }
+     .star{
+        grid-column: 1/2;
+    }
+    .star2{
+        grid-column: 1/2;
+    }
+    .star3{
+        grid-column: 1/2;
+    }
+    #star{
+        width: 90vw;
+    }
+    /*---bottom---*/
+    .bottom{
+        grid-template-areas: "e" "e2" "e3";
+        grid-template-rows: auto auto auto  0 0 ;
+    }
+    .errand{
+      grid-row: 1/2;
+      margin-left: 0px;
+    }
+    .errand2{
+        grid-row: 2/3;
+    }
+    .errand3{
+        grid-row: 3/4;
+    }
+    #errand{
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    body{
+        background:url(images/bg-pattern-top-mobile.svg),url(images/bg-pattern-bottom-mobile.svg);
+        background-position: top,bottom;
+        background-repeat: no-repeat;
+    }
+/*---left---*/
+    h1{
+        top:auto;
+        font-size:50px;
+    margin: 0 50px 20px 50px;
+    }
+    .left p{
+        margin: 0 10px 0px 10px;
+        font-size:22px;
+         line-height:20px;
+    }
+/*---right---*/    
+    #star{
+    flex-direction: column;
+    line-height: 20px;
+    }   
+    #errand p ,.images{
+        padding: 0px 55px 0px 55px;
+        font-size:15px;
+    }
+    .errand2 p   {
+        margin: 0px 10px 0px 10px;
+    }
+    .errand3 p {
+        margin: 0px 10px 0px 10px;
+    }
+    .images{
+        margin: 0px 10px 20px 10px;
+    }
+}
